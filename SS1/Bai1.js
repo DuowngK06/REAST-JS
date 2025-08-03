@@ -1,4 +1,5 @@
+for (let i = 0; i <= 5; i++) {
+    console.log("Trong vòng lặp: i =", i);
+}
 
-const a = 10
-const b = 20;
-let c = a + b;
+
