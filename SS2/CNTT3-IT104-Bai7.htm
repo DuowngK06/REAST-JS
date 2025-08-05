@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    Format a date object to dd / mm / yyyy format with leading zeros
+            * @param { Date } date - The date object to format
+                * @returns { string } Formatted date string(dd / mm / yyyy)
+
+        function formatDate(date) {
+            // Ensure input is a Date object
+            if (!(date instanceof Date)) {
+                throw new Error('Input must be a Date object');
+            }
+            // Get day, month, year components
+            const day = date.getDate();
+            const month = date.getMonth() + 1; // Months are 0-indexed
+            const year = date.getFullYear();
+            // Pad with leading zeros if necessary
+            const formattedDay = day < 10 ? `0${day}` : day;
+            const formattedMonth = month < 10 ? `0${month}` : month;
+            // Return formatted string
+            return `${formattedDay}/${formattedMonth}/${year}`;
+        }
+        // Export the function
+        module.exports = { formatDate };
+    </script>
+</body>
+
+</html>
