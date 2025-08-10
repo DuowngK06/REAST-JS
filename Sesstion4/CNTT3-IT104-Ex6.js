@@ -1,17 +1,7 @@
-// Định nghĩa kiểu dữ liệu Product
-type Product = {
-    id: string;
-    name: string;
-    price: number;
-    category: {
-        id: string;
-        name: string;
-    };
-    discount?: number; // optional
-};
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Mảng gồm 3 sản phẩm mẫu
-const listProduct: Product[] = [
+const listProduct = [
     {
         id: "P001",
         name: "Áo thun nam",
@@ -42,24 +32,18 @@ const listProduct: Product[] = [
         discount: 20
     }
 ];
-
 // Hàm tính giá sau giảm (nếu có discount)
-function getFinalPrice(product: Product): number {
+function getFinalPrice(product) {
     if (product.discount) {
         return product.price - (product.price * product.discount) / 100;
     }
     return product.price;
 }
-
-
-function printProductInfo(product: Product): void {
+function printProductInfo(product) {
     const finalPrice = getFinalPrice(product);
-    console.log(
-        `Sản phẩm: ${product.name} - Giá gốc: ${product.price}đ` +
+    console.log(`Sản phẩm: ${product.name} - Giá gốc: ${product.price}đ` +
         (product.discount ? ` - Giảm giá: ${product.discount}%` : "") +
-        ` - Giá sau giảm: ${finalPrice}đ - Danh mục: ${product.category.name}`
-    );
+        ` - Giá sau giảm: ${finalPrice}đ - Danh mục: ${product.category.name}`);
 }
-
-
 listProduct.forEach(printProductInfo);
+//# sourceMappingURL=CNTT3-IT104-Ex6.js.map

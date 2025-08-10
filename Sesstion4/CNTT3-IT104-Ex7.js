@@ -1,0 +1,50 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function processInput(input) {
+    if (typeof input === "string") {
+        // Kiểm tra nếu chuỗi chỉ chứa toàn số
+        if (/^\d+$/.test(input)) {
+            const num = Number(input);
+            console.log(num * num); // In ra bình phương
+        }
+        else {
+            // Đếm số ký tự chữ cái (bỏ qua số và ký tự đặc biệt)
+            const letters = input.match(/[a-zA-Z]/g); // Regex tìm chữ cái
+            const count = letters ? letters.length : 0;
+            console.log(`${count} ký tự chữ cái`);
+        }
+    }
+    else if (typeof input === "number") {
+        // Kiểm tra nếu là số nguyên tố
+        if (isPrime(input)) {
+            console.log("Là số nguyên tố");
+        }
+        else {
+            console.log("Không phải số nguyên tố");
+        }
+    }
+    else if (typeof input === "boolean") {
+        if (input) {
+            console.log("Giá trị là true - tiến hành xử lý");
+        }
+        else {
+            console.log("Giá trị là false - dừng xử lý");
+        }
+    }
+}
+function isPrime(n) {
+    if (n < 2 || !Number.isInteger(n))
+        return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0)
+            return false;
+    }
+    return true;
+}
+processInput("123");
+processInput("abc123!");
+processInput(7);
+processInput(10);
+processInput(true);
+processInput(false);
+//# sourceMappingURL=CNTT3-IT104-Ex7.js.map
