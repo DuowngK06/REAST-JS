@@ -33,6 +33,7 @@ class userAcc extends Account {
             return;
         }
         super.login(password);
+        ``;
     }
 }
 const user1 = new userAcc("001", "nguyenvana", "123456", "user", "active");
