@@ -24,3 +24,4 @@ console.log(
 console.log(
     partialUpdate({ name: 'Alice', age: 30, job: 'Developer' }, { name: 'Bob', job: 'Designer' })
 );
+
