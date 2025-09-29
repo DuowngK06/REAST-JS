@@ -1,0 +1,11 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Thần điều đại hiệp",
+      "author": "Kim dung",
+      "year": 1966,
+      "category": "Kiếm hiệp"
+    }
+  ]
+}
